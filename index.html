@@ -20,7 +20,9 @@
     </header>
 
     <main>
-        <div id="start">Start Quiz!!</div>
+        <div>
+          <button class="start" id="start"> Start Quiz!!</button>
+        </div>
         <div id="quiz">
             <img id="quiz-image" src="">
             <div>
@@ -28,10 +30,10 @@
             </div>
         </div>
         <div id="choices">
-            <button class = "choice" id="answerA">A. </button>
-            <button class = "choice" id="answerB">B. </button>
-            <button class = "choice" id="answerC">C. </button>
-            <button class = "choice" id="answerD">D. </button>
+            <button data-value="A" class = "choice" id="answerA">A. </button>
+            <button data-value="B" class = "choice" id="answerB">B. </button>
+            <button data-value="C" class = "choice" id="answerC">C. </button>
+            <button data-value="D" class = "choice" id="answerD">D. </button>
         </div>
         <div id="timer">You have X seconds left.</div>
         <div id="counter">You are on question 0 of 10 questions.</div>
