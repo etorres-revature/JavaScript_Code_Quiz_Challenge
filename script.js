@@ -104,6 +104,7 @@ function checkAnswer(event) {
     if ( answerChosen === correctAnswer){
         alert("congrats!  That's the right answer")
         score++
+        jsQuizScoreEl.textContent = "You have answered " + score + " out of 10 questions correctly."
     } else (
         alert("No points for wrong answers suck-o!!")
     )
