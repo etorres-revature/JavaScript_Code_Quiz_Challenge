@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-h3 {
+h3#footer {
   text-align: center;
 }
 
@@ -47,5 +47,9 @@ img {
 
 button {
   display: block;
+}
+
+header {
+  text-align: center;
 }
   
