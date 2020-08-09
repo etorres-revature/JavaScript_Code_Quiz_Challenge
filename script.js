@@ -30,18 +30,17 @@ const questionTime = 10;
 
 let interval = setInterval(function () {
     jsQuizTimerEl.textContent = "You have " + timer + " seconds left to finish this quiz."
+    timer--
 }, 1000);
 
-
-
-// jsQuizStartBtn.addEventListener("click", startQuiz);
+jsQuizStartBtn.addEventListener("click", startQuiz);
 jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
 jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
 jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
 jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
 
 function questionRender() {
-    let q = questions[5];
+    let q = questions[questionIndex];
     jsQuizImageEl.setAttribute("src", q.imgSrc);
     jsQuizQuestionEl.innerHTML = q.question;
     jsQuizAnswerABtn.textContent = "A. " + q.choiceA;
@@ -49,48 +48,56 @@ function questionRender() {
     jsQuizAnswerCBtn.textContent = "C. " + q.choiceC;
     jsQuizAnswerDBtn.textContent = "D. " + q.choiceD;
     jsQuizCounterEL.textContent = "You are on question number " + questionNum + " of 10 questions"
-    questionIndex++;
     questionNum++
 }
 
-questionRender();
-
-// funciton startQuiz(event) {
-    // interval;
-    // questionRender()
-// }
+function startQuiz(event) {
+    event.preventDefault();
+    interval;
+    questionRender();
+    
+}
 
 function chooseAnswerA(event) {
     event.preventDefault();
+    event.stopPropagation();
     console.log("You have clicked Button A!");
     console.log(event);
     checkAnswer(event);
+    questionRender()
 }
 
 function chooseAnswerB(event) {
     event.preventDefault();
+    event.stopPropagation();
     console.log("You have clicked Button B!");
     console.log(event);
     checkAnswer(event);
+    questionRender()
 }
 
 function chooseAnswerC(event) {
     event.preventDefault();
+    event.stopPropagation;
     console.log(event);
     console.log("You have clicked Button C!");
     checkAnswer(event);
+    questionRender()
 }
 
 function chooseAnswerD(event) {
     event.preventDefault();
+    event.stopPropagation();
     console.log(event);
     console.log("You have clicked Button D!");
     checkAnswer(event)
+    questionRender()
 }
 
 function checkAnswer(event) {
     console.log("you are in checkAnswer");
-    let correctAnswer = questions.correctAnswer;
+    let q = questions[questionIndex];
+    let correctAnswer = q.correctAnswer;
     console.log(correctAnswer);
     let answerChosen = event.target.dataset.value;
     console.log(answerChosen);
@@ -100,4 +107,5 @@ function checkAnswer(event) {
     } else (
         alert("No points for wrong answers suck-o!!")
     )
+    questionIndex++;
 }
