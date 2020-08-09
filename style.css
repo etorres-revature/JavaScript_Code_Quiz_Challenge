@@ -1,23 +1,51 @@
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  .fa:hover {
-    opacity: .65;
-  }
-  
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-    margin-right: 5px;
-  }
-  
-  .fa-github {
-    background: #2c4762;
-    color: white;
-    margin-left: 5px;
-  }
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: .65;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  margin-right: 5px;
+}
+
+.fa-github {
+  background: #2c4762;
+  color: white;
+  margin-left: 5px;
+}
+
+#copyright {
+  color: black;
+  text-align: center;
+}
+
+#social-media {
+  color: black;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+#e_mail {
+  text-align: center;
+}
+
+img {
+  float: left;
+  max-height: 275px;
+  max-width: 275px;
+}
+
+button {
+  display: block;
+}
   
