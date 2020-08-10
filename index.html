@@ -35,6 +35,12 @@
                 <button type="button" class="btn btn-success btn-large" id="start"> Start Quiz!!</button>
             </div>
         </section>
+        
+            <div class="progress w-50 mx-auto mb-2">
+                <div id="quiz-timer"class="progress-bar progress-bar-striped bg-success text-center" role="progressbar"
+                    style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+    
         <div id="quiz" class="container-fluid w-100" style="display: none;">
             <div class="row">
                 <div class="col-2"></div>
@@ -48,15 +54,15 @@
                     <p id="js-question"></p>
                     <div id="choices" style="display: block;">
                         <button type="button m-auto" class="btn btn-outline-danger d-block text-justify" data-value="A"
-                            id="answerA" >A.
+                            id="answerA">A.
                         </button>
                         <button type="button m-auto" class="btn btn-outline-warning d-block text-justify" data-value="B"
-                            id="answerB" >B.
+                            id="answerB">B.
                         </button>
                         <button type="button m-auto" class="btn btn-outline-info d-block text-justify" data-value="C"
-                            id="answerC" >C. </button>
+                            id="answerC">C. </button>
                         <button type="button m-auto" class="btn btn-outline-dark d-block text-justify" data-value="D"
-                            id="answerD" >D. </button>
+                            id="answerD">D. </button>
                     </div>
                 </div>
             </div>

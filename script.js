@@ -10,8 +10,9 @@ const jsQuizCounterEL = document.querySelector("#counter");
 const jsQuizScoreEl = document.querySelector("#score");
 const jsQuizTimerEl = document.querySelector("#timer");
 const jsQuizQuestionTitleEl = document.querySelector("#js-question-title");
-const jsQuizChoices = document.querySelector("#choices");
-const jsQuizHeader = document.querySelector("#js-quiz-header");
+const jsQuizChoicesEl = document.querySelector("#choices");
+const jsQuizHeaderEl = document.querySelector("#js-quiz-header");
+const jsQuizTimeBarEl = document.querySelector("#quiz-timer")
 
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
 { question: "How can you get the type of arguments passed to a function?", choiceA: "Using 'typeof' operator.", choiceB: "Using 'getType function.", choiceC: "Both of the above.", choiceD: "None of the above.", correctAnswer: "A" },
@@ -27,19 +28,20 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 let headerColorArray = ["darkturquoise", "chocolate", "coral", "antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon",]
 
 let timer = 180;
+let wholeTime = 180;
 let interval = 0;
 let colorInterval = 0;
 let score = 0;
 let count = 0;
 let questionIndex = 0;
 let questionNum = questionIndex + 1;
-const questionTime = 10;
+//const questionTime = 10;
 
 function headerColor() {
     colorInterval = setInterval(function () {
         console.log("in headerColor function")
         let randomInt = Math.floor(Math.random() * headerColorArray.length);
-        jsQuizHeader.style.color = headerColorArray[randomInt];
+        jsQuizHeaderEl.style.color = headerColorArray[randomInt];
     }, 2500)
 }
 
@@ -51,15 +53,18 @@ function startTimer() {
         } else {
             jsQuizTimerEl.textContent = "You have " + timer + " seconds left to finish this quiz."
             timer--
+            progressBar(timer, wholeTime);
         }
     }, 1000)
 };
 
-jsQuizStartBtn.addEventListener("click", startQuiz);
-jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
-jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
-jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
-jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
+function progressBar(time, start) {
+    var timePercent = (time / start) * 100;
+    timePercent = Math.floor(timePercent);
+    timePercent = (timePercent + "%");
+    jsQuizTimeBarEl.style.width = timePercent;
+    jsQuizTimeBarEl.textContent = timePercent;
+}
 
 function questionRender() {
     if (questionNum < 11) {
@@ -74,14 +79,13 @@ function questionRender() {
         console.log(questionNum);
     } else {
         quizPercentage();
-        jsQuizChoices.setAttribute("style", "display: none");
+        jsQuizChoicesEl.setAttribute("style", "display: none");
         quizMessageHeadingStyling();
         quizMessageHeading();
         quizMessageStyling();
         quizMessage();
         storeInitialsAndScore();
         clearInterval(interval);
-
     }
 }
 
@@ -195,3 +199,9 @@ function quizMessageHeadingStyling(){
 function quizMessageStyling(){
         jsQuizQuestionEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 18px; font-style: italic;");
 }
+
+jsQuizStartBtn.addEventListener("click", startQuiz);
+jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
+jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
+jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
+jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
