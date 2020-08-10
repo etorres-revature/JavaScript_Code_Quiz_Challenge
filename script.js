@@ -24,7 +24,7 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 { question: "Which of the following funciton of Array objects add one of more elements to the end of an array and returns the new length of the array?", choiceA: "pop()", choiceB: "push()", choiceC: "join()", choiceD: "map()", correctAnswer: "B" },
 { question: "Which of the following funciton of Array objects return true if at least one element in this array staisfies the provided testing funciton?", choiceA: "reverse()", choiceB: "shift()", choiceC: "slice()", choiceD: "some()", correctAnswer: "D" }];
 
-let headerColorArray = ["darkturquoise", "chocolate", "coral","antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon", ]
+let headerColorArray = ["darkturquoise", "chocolate", "coral", "antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon",]
 
 let timer = 180;
 let interval = 0;
@@ -36,7 +36,7 @@ let questionNum = questionIndex + 1;
 const questionTime = 10;
 
 function headerColor() {
-    colorInterval = setInterval(function(){
+    colorInterval = setInterval(function () {
         console.log("in headerColor function")
         let randomInt = Math.floor(Math.random() * headerColorArray.length);
         jsQuizHeader.style.color = headerColorArray[randomInt];
@@ -44,7 +44,7 @@ function headerColor() {
 }
 
 function startTimer() {
-    interval = setInterval(function() {
+    interval = setInterval(function () {
         if (timer === -1) {
             jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
             clearInterval(timer);
@@ -74,8 +74,10 @@ function questionRender() {
         console.log(questionNum);
     } else {
         quizPercentage();
-       jsQuizChoices.setAttribute("Style", "display: none;")
+        jsQuizChoices.setAttribute("style", "display: none");
+        quizMessageHeadingStyling();
         quizMessageHeading();
+        quizMessageStyling();
         quizMessage();
         storeInitialsAndScore();
         clearInterval(interval);
@@ -176,8 +178,7 @@ function quizMessageHeading() {
                 (percentage >= 20) ? "YOWZA:" : "OOF-fa!:"
 
     jsQuizQuestionTitleEl.textContent = x;
-    jsQuizQuestionTitleEl.setAttribute("text-decoration", "underline");
-    jsQuizQuestionTitleEl.style.fontWeight = 725;
+    
 }
 
 function storeInitialsAndScore() {
@@ -186,3 +187,11 @@ function storeInitialsAndScore() {
     localStorage.setItem("score", score);
 }
 
+function quizMessageHeadingStyling(){
+    jsQuizQuestionTitleEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 25px; font-weight: 725;");
+    jsQuizQuestionTitleEl.style.textDecoration = "underline";
+}
+
+function quizMessageStyling(){
+        jsQuizQuestionEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 18px; font-style: italic;");
+}
