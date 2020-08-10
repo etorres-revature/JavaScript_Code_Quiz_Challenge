@@ -1,3 +1,7 @@
+body {
+  background-color: purple;
+}
+
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -52,4 +56,53 @@ button {
 header {
   text-align: center;
 }
-  
+
+header h1 {
+  text-decoration: underline;
+}
+
+
+#spacer {
+  height: 50px;
+}
+
+#buttonspacer {
+  height: 15px;
+}
+
+#quizspacer {
+  height: 35px;
+}
+
+#spacer2 {
+  height: 22px;
+}
+
+div[class="w-100 clearfix position-relative font-weight-bold text-center"] {
+  color: goldenrod;
+}
+
+#rules {
+  border: 5px double salmon;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 850px;
+  color: sandybrown;
+  overflow: auto;
+}
+
+#smallJSLogo {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background-image: url("./assets/questions_array/images/JavaScript-logo-q1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
