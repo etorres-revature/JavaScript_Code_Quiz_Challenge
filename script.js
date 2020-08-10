@@ -21,17 +21,25 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 { question: "Which of the following funciton of Array objects add one of more elements to the end of an array and returns the new length of the array?", choiceA: "pop()", choiceB: "push()", choiceC: "join()", choiceD: "map()", correctAnswer: "B" },
 { question: "Which of the following funciton of Array objects return true if at least one element in this array staisfies the provided testing funciton?", choiceA: "reverse()", choiceB: "shift()", choiceC: "slice()", choiceD: "some()", correctAnswer: "D" }];
 
-let timer = 300;
+let timer = 180;
+let interval = 0;
 let score = 0;
 let count = 0;
 let questionIndex = 0
 let questionNum = questionIndex + 1;
 const questionTime = 10;
 
-let interval = setInterval(function () {
+function startTimer() {
+    interval  = setInterval(function () {
+    if (timer === 0) {
+        jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
+        clearInterval(timer);
+    } else {
     jsQuizTimerEl.textContent = "You have " + timer + " seconds left to finish this quiz."
     timer--
-}, 1000);
+    }
+}, 1000)
+};
 
 jsQuizStartBtn.addEventListener("click", startQuiz);
 jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
@@ -52,7 +60,7 @@ function questionRender() {
 
 function startQuiz(event) {
     event.preventDefault();
-    interval;
+    startTimer();
     jsQuizEl.style.display = "block";
     questionRender();
     
@@ -105,8 +113,9 @@ function checkAnswer(event) {
         alert("congrats!  That's the right answer")
         score++
         jsQuizScoreEl.textContent = "You have answered " + score + " out of 10 questions correctly."
-    } else (
-        alert("No points for wrong answers suck-o!!")
-    )
+    } else {
+        alert("No points for wrong answers suck-o!!");
+        timer = timer - 15;
+    }
     questionIndex++;
 }
