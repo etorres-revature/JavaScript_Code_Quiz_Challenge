@@ -9,6 +9,8 @@ const jsQuizAnswerDBtn = document.querySelector("#answerD");
 const jsQuizCounterEL = document.querySelector("#counter");
 const jsQuizScoreEl = document.querySelector("#score");
 const jsQuizTimerEl = document.querySelector("#timer");
+const jsQuizQuestionTitleEl = document.querySelector("#js-question-title");
+const jsQuizChoices = document.querySelector("#choices")
 
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
 { question: "How can you get the type of arguments passed to a function?", choiceA: "Using 'typeof' operator.", choiceB: "Using 'getType function.", choiceC: "Both of the above.", choiceD: "None of the above.", correctAnswer: "A" },
@@ -60,8 +62,12 @@ function questionRender() {
         console.log(questionNum);
     } else {
         quizPercentage();
+       jsQuizChoices.setAttribute("Style", "display: none;")
+        quizMessageHeading();
+        quizMessage();
         storeInitialsAndScore();
         clearInterval(interval);
+
     }
 }
 
@@ -135,6 +141,30 @@ function quizPercentage() {
                 (percentage >= 20) ? "./assets/images/percent/perspective.jpg" : "./assets/images/percent/Landon_Moss-OOF!.gif"
 
     jsQuizImageEl.setAttribute("src", x);
+}
+
+function quizMessage() {
+    let percentage = Math.round(100 * score / questions.length);
+
+    let x = (percentage >= 80) ? "You are a JavaScript wizard!!  Gandalf, Harry Potter, Merlin, Dr. Strange ... none of them have anything on you." :
+        (percentage >= 60) ? "Yeah, ok.  Youd did pretty good.  But, there's still room for improvement." :
+            (percentage >= 40) ? "Ah, well ... you know a few things.  Not enough to be considered anything more than a N00b though." :
+                (percentage >= 20) ? "Time to hit the books.  You might now something, but at this level it is just as likely as you guessed a few correct." : "What's that smell!?  Oh, it's you.  Time to put that google-fu to work and get cracking learning JavaScript."
+
+    jsQuizQuestionEl.textContent = x;
+}
+
+function quizMessageHeading() {
+    let percentage = Math.round(100 * score / questions.length);
+
+    let x = (percentage >= 80) ? "EXCELSIOR!!:" :
+        (percentage >= 60) ? "PRETTY GOOD:" :
+            (percentage >= 40) ? "MEH:" :
+                (percentage >= 20) ? "YOWZA:" : "OOF-fa!:"
+
+    jsQuizQuestionTitleEl.textContent = x;
+    jsQuizQuestionTitleEl.setAttribute("text-decoration", "underline");
+    jsQuizQuestionTitleEl.style.fontWeight = 725;
 }
 
 function storeInitialsAndScore() {
