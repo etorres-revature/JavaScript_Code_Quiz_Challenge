@@ -25,20 +25,20 @@ let timer = 180;
 let interval = 0;
 let score = 0;
 let count = 0;
-let questionIndex = 0
+let questionIndex = 0;
 let questionNum = questionIndex + 1;
 const questionTime = 10;
 
 function startTimer() {
-    interval  = setInterval(function () {
-    if (timer === 0) {
-        jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
-        clearInterval(timer);
-    } else {
-    jsQuizTimerEl.textContent = "You have " + timer + " seconds left to finish this quiz."
-    timer--
-    }
-}, 1000)
+    interval = setInterval(function () {
+        if (timer === -1) {
+            jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
+            clearInterval(timer);
+        } else {
+            jsQuizTimerEl.textContent = "You have " + timer + " seconds left to finish this quiz."
+            timer--
+        }
+    }, 1000)
 };
 
 jsQuizStartBtn.addEventListener("click", startQuiz);
@@ -48,14 +48,21 @@ jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
 jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
 
 function questionRender() {
-    let q = questions[questionIndex];
-    jsQuizQuestionEl.innerHTML = q.question;
-    jsQuizAnswerABtn.textContent = "A. " + q.choiceA;
-    jsQuizAnswerBBtn.textContent = "B. " + q.choiceB;
-    jsQuizAnswerCBtn.textContent = "C. " + q.choiceC;
-    jsQuizAnswerDBtn.textContent = "D. " + q.choiceD;
-    jsQuizCounterEL.textContent = "You are on question number " + questionNum + " of 10 questions"
-    questionNum++
+    if (questionNum < 11) {
+        let q = questions[questionIndex];
+        jsQuizQuestionEl.innerHTML = q.question;
+        jsQuizAnswerABtn.textContent = "A. " + q.choiceA;
+        jsQuizAnswerBBtn.textContent = "B. " + q.choiceB;
+        jsQuizAnswerCBtn.textContent = "C. " + q.choiceC;
+        jsQuizAnswerDBtn.textContent = "D. " + q.choiceD;
+        jsQuizCounterEL.textContent = "You are on question number " + questionNum + " of 10 questions"
+        questionNum++
+        console.log(questionNum);
+    } else {
+        quizPercentage();
+        storeInitialsAndScore();
+        clearInterval(interval);
+    }
 }
 
 function startQuiz(event) {
@@ -63,7 +70,6 @@ function startQuiz(event) {
     startTimer();
     jsQuizEl.style.display = "block";
     questionRender();
-    
 }
 
 function chooseAnswerA(event) {
@@ -109,7 +115,7 @@ function checkAnswer(event) {
     console.log(correctAnswer);
     let answerChosen = event.target.dataset.value;
     console.log(answerChosen);
-    if ( answerChosen === correctAnswer){
+    if (answerChosen === correctAnswer) {
         alert("congrats!  That's the right answer")
         score++
         jsQuizScoreEl.textContent = "You have answered " + score + " out of 10 questions correctly."
@@ -119,3 +125,21 @@ function checkAnswer(event) {
     }
     questionIndex++;
 }
+
+function quizPercentage() {
+    let percentage = Math.round(100 * score / questions.length);
+
+    let x = (percentage >= 80) ? "./assets/images/percent/great-job.jpg" :
+        (percentage >= 60) ? "./assets/images/percent/Just-OK.jpg" :
+            (percentage >= 40) ? "./assets/images/percent/Fair-to-Middling.png" :
+                (percentage >= 20) ? "./assets/images/percent/perspective.jpg" : "./assets/images/percent/Landon_Moss-OOF!.gif"
+
+    jsQuizImageEl.setAttribute("src", x);
+}
+
+function storeInitialsAndScore() {
+    let initials = prompt("Please enter your initials for local storage");
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", score);
+}
+
