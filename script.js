@@ -10,7 +10,8 @@ const jsQuizCounterEL = document.querySelector("#counter");
 const jsQuizScoreEl = document.querySelector("#score");
 const jsQuizTimerEl = document.querySelector("#timer");
 const jsQuizQuestionTitleEl = document.querySelector("#js-question-title");
-const jsQuizChoices = document.querySelector("#choices")
+const jsQuizChoices = document.querySelector("#choices");
+const jsQuizHeader = document.querySelector("#js-quiz-header");
 
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
 { question: "How can you get the type of arguments passed to a function?", choiceA: "Using 'typeof' operator.", choiceB: "Using 'getType function.", choiceC: "Both of the above.", choiceD: "None of the above.", correctAnswer: "A" },
@@ -23,16 +24,27 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 { question: "Which of the following funciton of Array objects add one of more elements to the end of an array and returns the new length of the array?", choiceA: "pop()", choiceB: "push()", choiceC: "join()", choiceD: "map()", correctAnswer: "B" },
 { question: "Which of the following funciton of Array objects return true if at least one element in this array staisfies the provided testing funciton?", choiceA: "reverse()", choiceB: "shift()", choiceC: "slice()", choiceD: "some()", correctAnswer: "D" }];
 
+let headerColorArray = ["darkturquoise", "chocolate", "coral","antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon", ]
+
 let timer = 180;
 let interval = 0;
+let colorInterval = 0;
 let score = 0;
 let count = 0;
 let questionIndex = 0;
 let questionNum = questionIndex + 1;
 const questionTime = 10;
 
+function headerColor() {
+    colorInterval = setInterval(function(){
+        console.log("in headerColor function")
+        let randomInt = Math.floor(Math.random() * headerColorArray.length);
+        jsQuizHeader.style.color = headerColorArray[randomInt];
+    }, 2500)
+}
+
 function startTimer() {
-    interval = setInterval(function () {
+    interval = setInterval(function() {
         if (timer === -1) {
             jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
             clearInterval(timer);
@@ -76,6 +88,7 @@ function startQuiz(event) {
     startTimer();
     jsQuizEl.style.display = "block";
     questionRender();
+    headerColor();
 }
 
 function chooseAnswerA(event) {
