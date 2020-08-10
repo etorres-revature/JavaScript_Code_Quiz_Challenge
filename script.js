@@ -122,11 +122,11 @@ function checkAnswer(event) {
     let answerChosen = event.target.dataset.value;
     console.log(answerChosen);
     if (answerChosen === correctAnswer) {
-        alert("congrats!  That's the right answer")
+        alert("Congrats!  That's the right answer.\nYou're score will go up by one point!!")
         score++
         jsQuizScoreEl.textContent = "You have answered " + score + " out of 10 questions correctly."
     } else {
-        alert("No points for wrong answers suck-o!!");
+        alert("No points for wrong answers!!");
         timer = timer - 15;
     }
     questionIndex++;
