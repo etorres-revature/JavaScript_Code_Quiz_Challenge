@@ -13,6 +13,10 @@ const jsQuizQuestionTitleEl = document.querySelector("#js-question-title");
 const jsQuizChoicesEl = document.querySelector("#choices");
 const jsQuizHeaderEl = document.querySelector("#js-quiz-header");
 const jsQuizTimeBarEl = document.querySelector("#quiz-timer")
+const jsQuizHighScoresEl = document.querySelector("#quiz-highscores");
+const jsQuizRankEl = document.querySelector("#quiz-rank");
+const jsQuizInitialsEl = document.querySelector("#initials");
+const jsQuizGameScoreEl = document.querySelector("#quiz-gamescore");
 
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
 { question: "How can you get the type of arguments passed to a function?", choiceA: "Using 'typeof' operator.", choiceB: "Using 'getType function.", choiceC: "Both of the above.", choiceD: "None of the above.", correctAnswer: "A" },
@@ -25,17 +29,64 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 { question: "Which of the following funciton of Array objects add one of more elements to the end of an array and returns the new length of the array?", choiceA: "pop()", choiceB: "push()", choiceC: "join()", choiceD: "map()", correctAnswer: "B" },
 { question: "Which of the following funciton of Array objects return true if at least one element in this array staisfies the provided testing funciton?", choiceA: "reverse()", choiceB: "shift()", choiceC: "slice()", choiceD: "some()", correctAnswer: "D" }];
 
+
 let headerColorArray = ["darkturquoise", "chocolate", "coral", "antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon",]
 
 let timer = 180;
 let wholeTime = 180;
 let interval = 0;
 let colorInterval = 0;
-let score = 0;
+let gameScore = 0;
 let count = 0;
 let questionIndex = 0;
 let questionNum = questionIndex + 1;
 //const questionTime = 10;
+let initials = "";
+// let scores = [];
+// let players = [];
+// let player = [{
+//     name: "",
+//     correct: ""
+// }]
+
+// let pastScores = JSON.parse(localStorage.getItem("score"));
+// let pastPlayers = JSON.parse(localStorage.getItem("player"));
+
+function populateHighScores() {
+    let rank = jsQuizRankEl;
+    let initials = jsQuizInitialsEl;
+    let score = jsQuizGameScoreEl;
+    let jsonScores = highScores;
+
+    for (var i = 1; i <= 10; i++) {
+        var newListItem = document.createElement("li")
+        rank.appendChild(newListItem);
+    }
+
+    for (var i = 0; i < jsonScores.length; i++) {
+        var newInitials = document.createElement("p");
+        newInitials.textContent = jsonScores[i].name.value;
+        initials.appendChild(newInitials);
+    }
+}
+
+function storeInitialsAndScore() {
+    var existingEntries = JSON.parse(localStorage.getItem("playersAndScores"))
+    if(existingEntries === null) {
+        existingEntries = [];
+    }
+    var newPlayer = {
+        name: initials,
+        correct: gameScore
+    }
+
+    localStorage.setItem("newEntry", JSON.stringify(newPlayer));
+    existingEntries.push(newPlayer);
+    localStorage.setItem("playersAndScores", JSON.stringify(existingEntries));
+
+    // localStorage.setItem("player", JSON.stringify(players));
+    // localStorage.setItem("score", JSON.stringify(scores));
+}
 
 function headerColor() {
     colorInterval = setInterval(function () {
@@ -78,6 +129,7 @@ function questionRender() {
         questionNum++
         console.log(questionNum);
     } else {
+        clearInterval(interval);
         quizPercentage();
         jsQuizChoicesEl.setAttribute("style", "display: none");
         quizMessageHeadingStyling();
@@ -85,12 +137,13 @@ function questionRender() {
         quizMessageStyling();
         quizMessage();
         storeInitialsAndScore();
-        clearInterval(interval);
+
     }
 }
 
 function startQuiz(event) {
     event.preventDefault();
+    initials = prompt("Please enter your initials for local storage");
     startTimer();
     jsQuizEl.style.display = "block";
     questionRender();
@@ -103,7 +156,7 @@ function chooseAnswerA(event) {
     console.log("You have clicked Button A!");
     console.log(event);
     checkAnswer(event);
-    questionRender()
+    questionRender();
 }
 
 function chooseAnswerB(event) {
@@ -112,7 +165,7 @@ function chooseAnswerB(event) {
     console.log("You have clicked Button B!");
     console.log(event);
     checkAnswer(event);
-    questionRender()
+    questionRender();
 }
 
 function chooseAnswerC(event) {
@@ -121,7 +174,7 @@ function chooseAnswerC(event) {
     console.log(event);
     console.log("You have clicked Button C!");
     checkAnswer(event);
-    questionRender()
+    questionRender();
 }
 
 function chooseAnswerD(event) {
@@ -142,8 +195,8 @@ function checkAnswer(event) {
     console.log(answerChosen);
     if (answerChosen === correctAnswer) {
         alert("Congrats!  That's the right answer.\nYou're score will go up by one point!!")
-        score++
-        jsQuizScoreEl.textContent = "You have answered " + score + " out of 10 questions correctly."
+        gameScore++
+        jsQuizScoreEl.textContent = "You have answered " + gameScore + " out of 10 questions correctly."
     } else {
         alert("No points for wrong answers!!");
         timer = timer - 15;
@@ -152,7 +205,7 @@ function checkAnswer(event) {
 }
 
 function quizPercentage() {
-    let percentage = Math.round(100 * score / questions.length);
+    let percentage = Math.round(100 * gameScore / questions.length);
 
     let x = (percentage >= 80) ? "./assets/images/percent/great-job.jpg" :
         (percentage >= 60) ? "./assets/images/percent/Just-OK.jpg" :
@@ -163,41 +216,35 @@ function quizPercentage() {
 }
 
 function quizMessage() {
-    let percentage = Math.round(100 * score / questions.length);
+    let percentage = Math.round(100 * gameScore / questions.length);
 
     let x = (percentage >= 80) ? "You are a JavaScript wizard!!  Gandalf, Harry Potter, Merlin, Dr. Strange ... none of them have anything on you." :
-        (percentage >= 60) ? "Yeah, ok.  Youd did pretty good.  But, there's still room for improvement." :
+        (percentage >= 60) ? "Yeah, ok.  Youd did pretty good; and, you obviously know quite a bit about JavaScript.  But, there's still room for improvement." :
             (percentage >= 40) ? "Ah, well ... you know a few things.  Not enough to be considered anything more than a N00b though." :
-                (percentage >= 20) ? "Time to hit the books.  You might now something, but at this level it is just as likely as you guessed a few correct." : "What's that smell!?  Oh, it's you.  Time to put that google-fu to work and get cracking learning JavaScript."
+                (percentage >= 20) ? "Time to hit the books.  You might know something, but at this level it is just as likely as you guessed a few correct." : "What's that smell!?  Oh, it's you.  Time to put that google-fu to work and get cracking learning JavaScript."
 
     jsQuizQuestionEl.textContent = x;
 }
 
 function quizMessageHeading() {
-    let percentage = Math.round(100 * score / questions.length);
+    let percentage = Math.round(100 * gameScore / questions.length);
 
-    let x = (percentage >= 80) ? "EXCELSIOR!!:" :
-        (percentage >= 60) ? "PRETTY GOOD:" :
-            (percentage >= 40) ? "MEH:" :
-                (percentage >= 20) ? "YOWZA:" : "OOF-fa!:"
+    let x = (percentage >= 80) ? "EXCELSIOR!!     (" + percentage + "%):" :
+        (percentage >= 60) ? "PRETTY GOOD     (" + percentage + "%):" :
+            (percentage >= 40) ? "MEH    (" + percentage + "%):" :
+                (percentage >= 20) ? "YOWZA     (" + percentage + "%):" : "OOF-fa!     (" + percentage + "%):"
 
     jsQuizQuestionTitleEl.textContent = x;
-    
+
 }
 
-function storeInitialsAndScore() {
-    let initials = prompt("Please enter your initials for local storage");
-    localStorage.setItem("initials", initials);
-    localStorage.setItem("score", score);
-}
-
-function quizMessageHeadingStyling(){
+function quizMessageHeadingStyling() {
     jsQuizQuestionTitleEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 25px; font-weight: 725;");
     jsQuizQuestionTitleEl.style.textDecoration = "underline";
 }
 
-function quizMessageStyling(){
-        jsQuizQuestionEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 18px; font-style: italic;");
+function quizMessageStyling() {
+    jsQuizQuestionEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 18px; font-style: italic;");
 }
 
 jsQuizStartBtn.addEventListener("click", startQuiz);
