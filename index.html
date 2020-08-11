@@ -5,63 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- favi on -->
     <link rel="icon" type="image/png" href="./assets/images/favicon/quiz-icon.png" />
+    <!-- title for tab -->
     <title>JavaScript Code Quiz</title>
+    <!-- bootstrap stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- social media button stylseet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local styling -->
     <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-
+    <!-- navbar from old project/links back to responsive portfolio and top scores -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="https://stardewvalley.net">Eric D. Torres</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ml-auto">
-            <ul class="navbar-nav w-100">
-            <li class="nav-item active ml-auto">
-              <a class="nav-link" href="./highscores.html">Recent Scores<span class="sr-only">(current)</span></a>
-            </li>
-            <!-- <li class="nav-item">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="./highscores.html">Recent Scores<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li> -->
-            <li class="nav-item dropdown ml-auto">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio Links
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/">Index</a>
-                <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About Me</a>
-                <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
-              </div>
-            </li>
-            <!-- <li class="nav-item">
+                    <li class="nav-item dropdown ml-auto">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portfolio Links
+                        </a>
+                        <!-- dropdown not working correctly/instead of dropping down it creates a scroll box... -->
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/">Index</a>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About
+                                Me</a>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li> -->
-          </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form> -->
+            </div>
         </div>
-    </div>
-      </nav>
+    </nav>
 
     <header>
+        <!-- setinterval on heder changes color every 250ms -->
         <h1 id="js-quiz-header">JavaScript Code Quiz</h1>
+        <!-- used inline span background to add JS logo -->
         <h3>Test your <span id="smallJSLogo"></span> knowledge base</h3>
     </header>
 
     <div id="quizspacer"></div>
 
     <main>
+        <!-- div for quiz rules and buttons to start quiz and go to recent scores -->
         <section class="container-fluid w-75 text-wrap" id="rules">
             <h2>Quiz Rules:</h2>
             <ul>
@@ -71,26 +88,27 @@
                 <li>15 seconds will be taken from the clock for incorrect answers</li>
             </ul>
             <div class="row">
-            <div class="col-4 float-left mb-2 d-inline">
-                <a class="btn btn-danger" href="./highscores.html" role="button">RECENT SCORES</a>
-            </div>
+                <!-- takes you to recent scores page (formerly high scores page) -->
+                <div class="col-4 float-left mb-2 d-inline">
+                    <a class="btn btn-danger" href="./highscores.html" role="button">RECENT SCORES</a>
+                </div>
+                <!-- start quiz button -->
+                <div class="col-4 text-center mb-2 d-inline btn-group">
+                    <button type="button" class="btn btn-success btn-large" id="start"> Start Quiz!!</button>
+                </div>
 
-            <div class="col-4 text-center mb-2 d-inline btn-group">
-                <button type="button" class="btn btn-success btn-large" id="start"> Start Quiz!!</button>
-            </div>
-
-            <!-- <div class="col-4 text-right float-right mb-2 d-inline">
+                <!-- <div class="col-4 text-right float-right mb-2 d-inline">
                 <button type="button" class="btn btn-warning btn-large" id="restart"> Re-Start Quiz!!</button>
             </div> -->
 
             </div>
         </section>
-
+        <!-- progress bar diplay -->
         <div class="progress w-50 mx-auto mb-2">
             <div id="quiz-timer" class="progress-bar progress-bar-striped bg-success text-center" role="progressbar"
                 style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-
+<!-- div to display quiz questions and answers -->
         <div id="quiz" class="container-fluid w-100" style="display: none;">
             <div class="row">
                 <div class="col-2"></div>
@@ -99,9 +117,11 @@
                         <img id="quiz-image" src="./assets/images/quiz/JavaScript-logo.png">
                     </div>
                 </div>
+                <!-- question is displayed here -->
                 <div class="card px-8 ml-2 text-wrap w-50" style="border-color: red;">
                     <p id="js-question-title">QUESTION:</p>
                     <p id="js-question"></p>
+                    <!-- button choices -->
                     <div id="choices" style="display: block;">
                         <button type="button m-auto" class="btn btn-outline-danger d-block text-justify" data-value="A"
                             id="answerA">A.
@@ -120,7 +140,7 @@
     </main>
 
     <div id="spacer2"> </div>
-
+<!-- informational display for seconds left/number of questions presented/number of questions answered correctly -->
     <div class="w-100 clearfix position-relative font-weight-bold text-center">
         <div class="row">
             <div class="col-12" id="timer">You have X seconds left.</div>
@@ -134,7 +154,7 @@
     </div>
 
     <div id="spacer"></div>
-
+<!-- footer taken form other projects -->
     <footer class="sticky-footer" style="display: contents; border-color: black; background-color: grey">
         <div class="container">
             <div class="row">
