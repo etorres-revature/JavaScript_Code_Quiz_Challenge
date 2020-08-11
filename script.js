@@ -84,8 +84,8 @@ function populateHighScores() {
         rank.appendChild(newListItem);
     }
     //displaying last ten players initials backwards so that current player is listed first
-    for (var i = (jsonScores.length - 1); i > 0; i--) {
-        // if (i === 10){
+    for (var i = 10; i > 0; i--) {
+        // if (i {
         //     return;
         // } else {
         var newInitials = document.createElement("p");
@@ -95,8 +95,8 @@ function populateHighScores() {
     }
 
     //displaying last ten scores backwards so that current score listed first
-    for (var i = (jsonScores.length - 1); i > 0; i--) {
-        // if (i === 10){
+    for (var i = 10; i > 0; i--) {
+        // if (i === 10) {
         //     return;
         // } else {
         var newScore = document.createElement("p");
