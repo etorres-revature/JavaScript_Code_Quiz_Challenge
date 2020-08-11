@@ -1,12 +1,13 @@
 // JS to grab elements and buttons for DOM manipulation
 const jsQuizStartBtn = document.querySelector("#start");
-const jsQuizEl = document.querySelector("#quiz");
-const jsQuizQuestionEl = document.querySelector("#js-question");
-const jsQuizImageEl = document.querySelector("#quiz-image");
 const jsQuizAnswerABtn = document.querySelector("#answerA");
 const jsQuizAnswerBBtn = document.querySelector("#answerB");
 const jsQuizAnswerCBtn = document.querySelector("#answerC");
 const jsQuizAnswerDBtn = document.querySelector("#answerD");
+const jsQuizChangeBackgroundBtn = document.querySelector("#background");
+const jsQuizEl = document.querySelector("#quiz");
+const jsQuizQuestionEl = document.querySelector("#js-question");
+const jsQuizImageEl = document.querySelector("#quiz-image");
 const jsQuizCounterEL = document.querySelector("#counter");
 const jsQuizScoreEl = document.querySelector("#score");
 const jsQuizTimerEl = document.querySelector("#timer");
@@ -18,7 +19,7 @@ const jsQuizTimeBarEl = document.querySelector("#quiz-timer")
 const jsQuizRankEl = document.querySelector("#quiz-rank");
 const jsQuizInitialsEl = document.querySelector("#initials");
 const jsQuizGameScoreEl = document.querySelector("#quiz-gamescore");
-const jsQuizReStartGameBtn = document.querySelector("#restart");
+//const jsQuizReStartGameBtn = document.querySelector("#restart");
 
 // question array to display question, answer choices, and correct answer
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
@@ -33,7 +34,7 @@ let questions = [{ question: "Which of the following is correct about JavaScript
 { question: "Which of the following funciton of Array objects return true if at least one element in this array staisfies the provided testing funciton?", choiceA: "reverse()", choiceB: "shift()", choiceC: "slice()", choiceD: "some()", correctAnswer: "D" }];
 
 //array of potential header colors
-let headerColorArray = ["darkturquoise", "chocolate", "coral", "antiquwhite", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "salmon",]
+let headerColorArray = ["darkturquoise", "chocolate", "aqua", "green", "gold", "blue", "black", "red", "goldenrod", "greenyellow", "pink", "magenta", "darkKhaki", "darkOrange", "CadetBlue", "Chartreuse", "crimson", "deeppink", "fucshia", "lavender", "lemonchiffon", "lime", "maroon"]
 
 //global variables
 //amount of time in game decrementer
@@ -140,6 +141,13 @@ function headerColor() {
         jsQuizHeaderEl.style.color = headerColorArray[randomInt];
         //every 2.5s
     }, 2500)
+}
+
+function changeBackground() {
+    console.log("inside change background function")
+    let randomInt = Math.floor(Math.random() * headerColorArray.length);
+    document.body.setAttribute("style", "background-color: " + headerColorArray[randomInt]);
+    console.log(headerColorArray[randomInt])
 }
 
 //funciton to start game
@@ -380,4 +388,5 @@ jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
 jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
 jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
 jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
+jsQuizChangeBackgroundBtn.addEventListener("click", changeBackground);
 //jsQuizReStartGameBtn.addEventListener("click", reStartQuiz);
