@@ -216,7 +216,6 @@ function questionRender() {
         quizMessage();
         //saving the current player's information into local storage
         storeInitialsAndScore();
-
     }
 }
 
