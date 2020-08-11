@@ -7,30 +7,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" type="image/png" href="./assets/images/favicon/highscores.png" />
     <title>JavaScript Code Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css" />
 </head>
 
-<body>
+<body onload="populateHighScores()">
 
-    <main id="quiz-highscores" class="container-fluid w-75">
-        <div class="row">
-            <header>TOP SCORES</header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://stardewvalley.net">Eric D. Torres</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="ml-auto">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item active ml-auto">
+                        <a class="nav-link" href="./index.html">JS Game <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+                    <li class="nav-item dropdown ml-auto">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portfolio Links
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/">Index</a>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html">About
+                                Me</a>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html">Portfolio</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"
+                                href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html">Contact</a>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li> -->
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+            </div>
+        </div>
+    </nav>
+
+    <div id="quizspacer"></div>
+
+    <main id="quiz-highscores" class="container-fluid w-75 text-center">
+        <div id="highscores-page-header" class="row">
+            <h1>RECENT SCORES</h1>
         </div>
         <div class="row">
-            <div class="col-4">
-                <ol id="quiz-rank" ></ol>
+            <div id="quiz-rank" class="col-4">
             </div>
             <div id="initials" class="col-4">
-
             </div>
             <div id="quiz-gamescore" class="col-4">
-
             </div>
         </div>
     </main>
+
+    <div id="spacer"></div>
 
     <footer class="sticky-footer" style="display: contents; border-color: black; background-color: grey">
         <div class="container">

@@ -105,3 +105,32 @@ ul {
   background-size:cover;
 }
 
+#highscores-page-header {
+  margin: 0 auto;
+  font-family: 'Arvo', serif;
+  background-color: black;
+  color: greenyellow;
+  border: solid red 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#quiz-rank p {
+  margin: 0;
+  font-weight: 650;
+  text-align: center;
+}
+
+#initials p {
+  margin: 0;
+  font-weight: 650;
+
+}
+
+#quiz-gamescore p {
+  margin: 0;
+  font-weight: 650;
+}
+
+

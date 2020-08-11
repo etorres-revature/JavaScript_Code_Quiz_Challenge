@@ -13,10 +13,11 @@ const jsQuizQuestionTitleEl = document.querySelector("#js-question-title");
 const jsQuizChoicesEl = document.querySelector("#choices");
 const jsQuizHeaderEl = document.querySelector("#js-quiz-header");
 const jsQuizTimeBarEl = document.querySelector("#quiz-timer")
-const jsQuizHighScoresEl = document.querySelector("#quiz-highscores");
+// const jsQuizHighScoresEl = document.querySelector("#quiz-highscores");
 const jsQuizRankEl = document.querySelector("#quiz-rank");
 const jsQuizInitialsEl = document.querySelector("#initials");
 const jsQuizGameScoreEl = document.querySelector("#quiz-gamescore");
+const jsQuizReStartGameBtn = document.querySelector("#restart");
 
 let questions = [{ question: "Which of the following is correct about JavaScript?", choiceA: "JavaScript is a lightweight, interpreted programming language.", choiceB: "JavaScript has object-oriented capabilities that allow you to build interactivity into otherwise static HTML pages.", choiceC: "The general-purpose core of the language has been embedded in web browsers.", choiceD: "All of the above.", correctAnswer: "D" },
 { question: "How can you get the type of arguments passed to a function?", choiceA: "Using 'typeof' operator.", choiceB: "Using 'getType function.", choiceC: "Both of the above.", choiceD: "None of the above.", correctAnswer: "A" },
@@ -49,6 +50,7 @@ let initials = "";
 //     correct: ""
 // }]
 
+let highScores = JSON.parse(localStorage.getItem("playersAndScores"));
 // let pastScores = JSON.parse(localStorage.getItem("score"));
 // let pastPlayers = JSON.parse(localStorage.getItem("player"));
 
@@ -59,15 +61,32 @@ function populateHighScores() {
     let jsonScores = highScores;
 
     for (var i = 1; i <= 10; i++) {
-        var newListItem = document.createElement("li")
+        var newListItem = document.createElement("p")
+        console.log("li!")
+        newListItem.textContent = i;
         rank.appendChild(newListItem);
     }
 
-    for (var i = 0; i < jsonScores.length; i++) {
+    for (var i = (jsonScores.length-1); i > 0; i--) {
+        // if (i === 10){
+        //     return;
+        // } else {
         var newInitials = document.createElement("p");
-        newInitials.textContent = jsonScores[i].name.value;
+        console.log(jsonScores[i].name)
+        newInitials.textContent = jsonScores[i].name;
         initials.appendChild(newInitials);
-    }
+        }
+
+
+        for(var i = (jsonScores.length-1); i > 0; i--) {
+        // if (i === 10){
+        //     return;
+        // } else {
+            var newScore = document.createElement("p");
+            console.log(jsonScores[i].correct);
+            newScore.textContent = jsonScores[i].correct;
+            score.appendChild(newScore);
+            }
 }
 
 function storeInitialsAndScore() {
@@ -84,6 +103,7 @@ function storeInitialsAndScore() {
     existingEntries.push(newPlayer);
     localStorage.setItem("playersAndScores", JSON.stringify(existingEntries));
 
+    
     // localStorage.setItem("player", JSON.stringify(players));
     // localStorage.setItem("score", JSON.stringify(scores));
 }
@@ -126,6 +146,7 @@ function questionRender() {
         jsQuizAnswerCBtn.textContent = "C. " + q.choiceC;
         jsQuizAnswerDBtn.textContent = "D. " + q.choiceD;
         jsQuizCounterEL.textContent = "You are on question number " + questionNum + " of 10 questions"
+        jsQuizImageEl.setAttribute("src", "./assets/images/quiz/JavaScript-logo.png")
         questionNum++
         console.log(questionNum);
     } else {
@@ -143,12 +164,26 @@ function questionRender() {
 
 function startQuiz(event) {
     event.preventDefault();
+    event.stopPropagation();
     initials = prompt("Please enter your initials for local storage");
     startTimer();
     jsQuizEl.style.display = "block";
     questionRender();
     headerColor();
 }
+
+// function reStartQuiz(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     timer = 180;
+//     gameScore = 0;
+//     count = 0;
+//     questionIndex = 0;
+//     initials = prompt("Please enter your initials for local storage");
+//     startTimer();
+//     questionRender();
+//     headerColor(); 
+// }
 
 function chooseAnswerA(event) {
     event.preventDefault();
@@ -252,3 +287,4 @@ jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
 jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
 jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
 jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
+jsQuizReStartGameBtn.addEventListener("click", reStartQuiz);
