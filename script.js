@@ -72,9 +72,9 @@ function populateHighScores() {
     let rank = jsQuizRankEl;
     let initials = jsQuizInitialsEl;
     let score = jsQuizGameScoreEl;
-    let jsonScores = highScores;
-    jsonScores = jsonScores.slice(-10);
-    console.log(JSON.stringify(jsonScores.keys(config)));
+    // let jsonScores = highScores;
+    highScores.slice(-10);
+    
 
     //displaying numbers 1 - 10 
     for (var i = 1; i <= 10; i++) {
@@ -89,16 +89,16 @@ function populateHighScores() {
     //displaying last ten players initials backwards so that current player is listed first
     for (var i = 9; i >= 0; i--) {
         var newInitials = document.createElement("p");
-        console.log(jsonScores[i].name)
-        newInitials.textContent = jsonScores[i].name;
+        console.log(highScores[i].name)
+        newInitials.textContent = highScores[i].name;
         initials.appendChild(newInitials);
     }
 
     //displaying last ten scores backwards so that current score listed first
     for (var i = 9; i >= 0; i--)  {
         var newScore = document.createElement("p");
-        console.log(jsonScores[i].correct);
-        newScore.textContent = jsonScores[i].correct;
+        console.log(highScores[i].correct);
+        newScore.textContent = highScores[i].correct;
         score.appendChild(newScore);
     }
 }
