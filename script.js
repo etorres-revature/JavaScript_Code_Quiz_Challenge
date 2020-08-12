@@ -86,19 +86,20 @@ function populateHighScores() {
         //appending p element to page
         rank.appendChild(newListItem);
     }
+
     //displaying last ten players initials backwards so that current player is listed first
     for (var i = 9; i >= 0; i--) {
         var newInitials = document.createElement("p");
-        console.log(highScores[i].name)
-        newInitials.textContent = highScores[i].name;
+        console.log(JSON.parse(localStorage.getItem("playersAndScores"))[i].name)
+        newInitials.textContent = JSON.parse(localStorage.getItem("playersAndScores"))[i].name;
         initials.appendChild(newInitials);
     }
 
     //displaying last ten scores backwards so that current score listed first
     for (var i = 9; i >= 0; i--)  {
         var newScore = document.createElement("p");
-        console.log(highScores[i].correct);
-        newScore.textContent = highScores[i].correct;
+        console.log(JSON.parse(localStorage.getItem("playersAndScores"))[i].correct);
+        newScore.textContent = JSON.parse(localStorage.getItem("playersAndScores"))[i].correct;
         score.appendChild(newScore);
     }
 }
