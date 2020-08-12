@@ -115,6 +115,7 @@ function populateHighScores() {
         }
     } else {
         for (var i = 9; i >= 0; i--) {
+            jsonScores.slice(-10);
             newScore = document.createElement("p");
             console.log(jsonScores[i].correct);
             newScore.textContent = jsonScores[i].correct;
