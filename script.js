@@ -74,7 +74,7 @@ function populateHighScores() {
     let score = jsQuizGameScoreEl;
     let jsonScores = highScores;
     jsonScores = jsonScores.slice(-10);
-    console.log(jsonScores)
+    console.log(JSON.stringify(jsonScores.keys(config)));
 
     //displaying numbers 1 - 10 
     for (var i = 1; i <= 10; i++) {
