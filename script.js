@@ -72,9 +72,8 @@ function populateHighScores() {
     let rank = jsQuizRankEl;
     let initials = jsQuizInitialsEl;
     let score = jsQuizGameScoreEl;
-    // let jsonScores = highScores;
-    highScores.slice(-10);
-    
+    let jsonScores = highScores;
+    console.log(jsonScores);
 
     //displaying numbers 1 - 10 
     for (var i = 1; i <= 10; i++) {
@@ -88,21 +87,42 @@ function populateHighScores() {
     }
 
     //displaying last ten players initials backwards so that current player is listed first
-    for (var i = 9; i >= 0; i--) {
-        var newInitials = document.createElement("p");
-        console.log(JSON.parse(localStorage.getItem("playersAndScores"))[i].name)
-        newInitials.textContent = JSON.parse(localStorage.getItem("playersAndScores"))[i].name;
-        initials.appendChild(newInitials);
+
+    if (jsonScores.length <= 10) {
+        for (var i = 0; i < jsonScores.length; i++) {
+            var newInitials = document.createElement("p");
+            console.log(jsonScores[i].name);
+            newInitials.textContent = jsonScores[i].name;
+            initials.appendChild(newInitials);
+        }
+    } else {
+        for (var i = 9; i >= 0; i--) {
+            jsonScores.slice(-10);
+            newInitials = document.createElement("p");
+            console.log(jsonScores[i].name);
+            newInitials.textContent = jsonScores[i].name;
+            initials.appendChild(newInitials);
+        }
     }
 
     //displaying last ten scores backwards so that current score listed first
-    for (var i = 9; i >= 0; i--)  {
-        var newScore = document.createElement("p");
-        console.log(JSON.parse(localStorage.getItem("playersAndScores"))[i].correct);
-        newScore.textContent = JSON.parse(localStorage.getItem("playersAndScores"))[i].correct;
-        score.appendChild(newScore);
+    if (jsonScores.length <= 10) {
+        for (var i = 0; i < jsonScores.length; i++) {
+            var newScore = document.createElement("p");
+            console.log(jsonScores[i].correct);
+            newScore.textContent = jsonScores[i].correct;
+            score.appendChild(newScore);
+        }
+    } else {
+        for (var i = 9; i >= 0; i--) {
+            newScore = document.createElement("p");
+            console.log(jsonScores[i].correct);
+            newScore.textContent = jsonScores[i].correct;
+            score.appendChild(newScore);
+        }
     }
 }
+
 
 //storing player initials and score in local storage
 function storeInitialsAndScore() {
