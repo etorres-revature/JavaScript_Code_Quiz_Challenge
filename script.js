@@ -73,6 +73,9 @@ function populateHighScores() {
     let initials = jsQuizInitialsEl;
     let score = jsQuizGameScoreEl;
     let jsonScores = highScores;
+    jsonScores = jsonScores.slice(-10);
+    console.log(jsonScores)
+
     //displaying numbers 1 - 10 
     for (var i = 1; i <= 10; i++) {
         //created p element
@@ -84,10 +87,7 @@ function populateHighScores() {
         rank.appendChild(newListItem);
     }
     //displaying last ten players initials backwards so that current player is listed first
-    for (var i = 10; i > 0; i--) {
-        // if (i {
-        //     return;
-        // } else {
+    for (var i = 9; i >= 0; i--) {
         var newInitials = document.createElement("p");
         console.log(jsonScores[i].name)
         newInitials.textContent = jsonScores[i].name;
@@ -95,10 +95,7 @@ function populateHighScores() {
     }
 
     //displaying last ten scores backwards so that current score listed first
-    for (var i = 10; i > 0; i--) {
-        // if (i === 10) {
-        //     return;
-        // } else {
+    for (var i = 9; i >= 0; i--)  {
         var newScore = document.createElement("p");
         console.log(jsonScores[i].correct);
         newScore.textContent = jsonScores[i].correct;
@@ -349,7 +346,7 @@ function quizMessage() {
     //declaring a variable to hold the quiz messsage to display based on percentage obtained by taking quiz
     //ternary operators - WHAT, WHHHHHAAAAAATTTTTTTT!!!! amiright?
     let x = (percentage >= 80) ? "You are a JavaScript wizard!!  Gandalf, Harry Potter, Merlin, Dr. Strange ... none of them have anything on you." :
-        (percentage >= 60) ? "Yeah, ok.  Youd did pretty good; and, you obviously know quite a bit about JavaScript.  But, there's still room for improvement." :
+        (percentage >= 60) ? "Yeah, ok.  You did pretty good; and, you obviously know quite a bit about JavaScript.  But, there's still room for improvement." :
             (percentage >= 40) ? "Ah, well ... you know a few things.  Not enough to be considered anything more than a N00b though." :
                 (percentage >= 20) ? "Time to hit the books.  You might know something, but at this level it is just as likely as you guessed a few correct." : "What's that smell!?  Oh, it's you.  Time to put that google-fu to work and get cracking learning JavaScript."
     //putting the text in the html
@@ -365,7 +362,7 @@ function quizMessageHeading() {
     let x = (percentage >= 80) ? "EXCELSIOR!!     (" + percentage + "%):" :
         (percentage >= 60) ? "PRETTY GOOD     (" + percentage + "%):" :
             (percentage >= 40) ? "MEH    (" + percentage + "%):" :
-                (percentage >= 20) ? "YOWZA     (" + percentage + "%):" : "OOF-fa!     (" + percentage + "%):"
+                (percentage >= 20) ? "YOWZA     (" + percentage + "%):" : "OOFFFF--fa!     (" + percentage + "%):"
     //putting the heading in the html
     jsQuizQuestionTitleEl.textContent = x;
 }
