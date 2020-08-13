@@ -1,12 +1,6 @@
 # :school: JavaScript_Code_Quiz_Challenge :school:
 
-<p align="justify">
-
 The world wide web is composed of three primary languages:  Hypertext Markup Lanauge **(HTML)**; Cascading Style Sheets **(CSS)** and JavaScript **(JS)**  Each perfroms a specific funciton: 
-
-</p>
-
-<p align="justify">
 
 1. *HTML* is used to structure and present content on the World Wide Web;
 2. *CSS* is the language for describing the presentation of web pages (i.e. - fonts, layout, colors, etc) as well, it allows for the presentation to adapt to different types of devices with different size screens;
@@ -18,12 +12,10 @@ The world wide web is composed of three primary languages:  Hypertext Markup Lan
     * setting timers/intervals
     * specials effects in games
     * and many other prominent aspects of world wide web interactivity.
-</p>
+
 
 <p align="justify">
-
 In order to test your JS knowledge, I have created the [JavaScript Code Quiz Challenge](https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/).  It is powered by JS with ten questions ranging from beginner to intermediate difficulty. While you are deterimining your level of JS knowledge, you will also be getting an indication of the sorts of capabilities that JS can bring to a web page.
-
 </p>
 
 ## :video_game: GAMEPLAY :video_game:
@@ -46,7 +38,7 @@ When you click on the button that reads **"Start Quiz!!"** JS is used to display
 * *an area to display the question*
 * *four buttons each with a potential correct answer*
 
-![JavaScript Quiz Challenge after game started](./assets/images/readme_screenshots/quiz-active)
+![JavaScript Code Quiz Challenge after game started](./assets/images/readme_screenshots/quiz-active.png)
 
 While you are taking the JavaScript Code Quiz Challenge JS is being used to manipulate the following HTML elements:
 
@@ -59,14 +51,18 @@ While you are taking the JavaScript Code Quiz Challenge JS is being used to mani
 Once you have answered all of the questions, the image and message will be changed by JS based on the percentage of questions that you have answwered correctly.
 </p>
 
-![JavaScript Quiz Challenge completed game](./assets/images/readme_screenshots/quiz-finished)
+![JavaScript Code Quiz Challenge completed game](./assets/images/readme_screenshots/quiz-finished.png)
 
 
 Don't let the timer run out; otherwise, a devil-may-care Lisa Simpson will ***devilishly*** appear to inform you that you have lost!!
 
-![JavaScript Quiz Challenge Lisa Simpson loser message](./assets/images/readme_screenshots/quiz-loser)
+![JavaScript Code Quiz Challenge Lisa Simpson loser message](./assets/images/readme_screenshots/quiz-loser.png)
 
+When you are finished with the JavaScript Code Quiz Challenge, JS is used to store an array of objects containing player initials and scores.  When the ***Top Scores*** page is visited JS is used to dynamically dispaly information of the last ten players and their associated scores.  ***JSON parse/stringify*** is used to store this array of objects in *Local Storage*, so that the information is ***persisted*** that is it will be available in the browser even if it is closed or reloaded (the information will be lost once the user or another application **clears** *Local Storage*).
 
+![JavaScript Code Quiz Challenge ***Top Scores*** page display](./assets/images/readme_screenshots/quiz-top-scores.png)
+
+And there you have it, just a small taste of the ways in which **JS** can make your web pages both *dynamic* and *interactive****!!***
 
 ### :computer: Technologies Used :computer:
 
