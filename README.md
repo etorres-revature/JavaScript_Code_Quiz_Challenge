@@ -1,12 +1,13 @@
 # JavaScript_Code_Quiz_Challenge :school:
 
 <p align="justify">
-The world wide web is composed of three primary languages:  Hypertext Markup Lanauge **(HTML)**; Cascading Style Sheets **(CSS)**; and JavaScript **(JS)**.  Each perfroms a specific funciton: 
+The world wide web is composed of three primary languages:  Hypertext Markup Lanauge <strong>(HTML)</strong>; Cascading Style Sheets <strong>(CSS)</strong>; and JavaScript <strong>(JS)</strong>.  Each perfroms a specific funciton: 
 </p>
 
 <p align="justify">
-1. HTML is used to structure and present content on the World Wide Web;
-2. CSS is the language for describing the presentation of web pages - e.g. fonts, layout, colors, etc - as well, it allows for the presentation to adapt to different types of devices with different size screens;
+
+1. *HTML* is used to structure and present content on the World Wide Web;
+2. *CSS* is the language for describing the presentation of web pages - e.g. fonts, layout, colors, etc - as well, it allows for the presentation to adapt to different types of devices with different size screens;
 3. _JavaScript_ is used to implement complex features on web pages by
     * displaying timely content
     * creating interactrive features
@@ -23,8 +24,6 @@ In order to test your JS knowledge, I have created the [JavaScript Code Quiz Cha
 
 ## GAMEPLAY  :video_game:
      
-
-
 Quiz - https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/
 
 ### Technologies Used
