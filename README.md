@@ -1,5 +1,30 @@
 # JavaScript_Code_Quiz_Challenge
 
+<p align="justify">
+The world wide web is composed of three primary languages:  Hypertext Markup Lanauge **(HTML)**; Cascading Style Sheets **(CSS)**; and JavaScript **(JS)**.  Each perfroms a specific funciton: 
+</p>
+
+<p align="justify">
+* *HTML* is used to structure and present content on the World Wide Web;
+* *CSS* is the language for describing the presentation of web pages - e.g. fonts, layout, colors, etc - as well, it allows for the presentation to adapt to different types of devices with different size screens;
+* *JavaScript* is used to implement complex features on web pages by
+    * displaying timely content
+    * creating interactrive features
+    * animated graphics
+    * dynamically created properties
+    * setting timers/intervals
+    * specials effects in games
+    * and many other prominent aspects of world wide web interactivity.
+</p>
+
+<p align="justify">
+In order to test your JS knowledge, I have created the [JavaScript Code Quiz Challenge](https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/).  It is powered by JS with ten questions ranging from beginner to intermediate difficulty. While you are deterimining your level of JS knowledge, you will also be getting an indication of the sorts of capabilities that JS can bring to a web page.
+</p>
+
+## GAMEPLAY  :video_game:
+     
+
+
 Quiz - https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/
 
 ### Technologies Used
@@ -47,7 +72,3 @@ The author can be reached at etorresnotary@gmail.com.
 ###### License
 
 This product is unlicensed.
-
-<a name="footnote1">[footnote 1](https://www.metacompliance.com/blog/5-damaging-consequences-of-a-data-breach/)</a>
-
-<a name="footnote2">[footnote 2](https://www.mentalfloss.com/article/504786/8-tips-make-your-passwords-strong-possible)</a>
