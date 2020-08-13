@@ -116,21 +116,39 @@ ul {
   align-items: center;
 }
 
+#quiz-rank {
+  padding-right: 0;
+}
+
+#initials {
+  padding: 0;
+}
+
+#quiz-gamescore {
+  padding-left: 0;
+}
+
 #quiz-rank p {
   margin: 0;
+  padding: 0;
   font-weight: 650;
   text-align: center;
+  background: gray;
 }
 
 #initials p {
   margin: 0;
+  padding: 0;
   font-weight: 650;
-
+  background-color: #ccc
 }
 
 #quiz-gamescore p {
   margin: 0;
+  padding: 0;
   font-weight: 650;
+  background: gray
 }
+
 
 

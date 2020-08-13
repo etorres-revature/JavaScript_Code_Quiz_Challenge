@@ -87,7 +87,6 @@ function populateHighScores() {
     }
 
     //displaying last ten players initials backwards so that current player is listed first
-
     if (jsonScores.length <= 10) {
         for (var i = 0; i < jsonScores.length; i++) {
             var newInitials = document.createElement("p");
@@ -122,8 +121,18 @@ function populateHighScores() {
             score.appendChild(newScore);
         }
     }
-}
 
+    // function backGroundColorInitial(initials) {
+    //     // var element = initials;
+    //     // console.log("This is the element", element);
+    //     if (initials.getElementbyTag("p") === true) {
+    //         console.log("in the if statement");
+    //     initials.style.backGroundColor = "#ccc";
+    //     }
+    // }
+
+    // backGroundColorInitial(initials)
+}
 
 //storing player initials and score in local storage
 function storeInitialsAndScore() {
