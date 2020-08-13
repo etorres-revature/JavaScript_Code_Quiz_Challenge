@@ -1,4 +1,4 @@
-# :school: JavaScript_Code_Quiz_Challenge 
+# :school: JavaScript_Code_Quiz_Challenge :school:
 
 <p align="justify">
 
@@ -9,7 +9,7 @@ The world wide web is composed of three primary languages:  Hypertext Markup Lan
 <p align="justify">
 
 1. *HTML* is used to structure and present content on the World Wide Web;
-2. *CSS* is the language for describing the presentation of web pages - e.g. fonts, layout, colors, etc - as well, it allows for the presentation to adapt to different types of devices with different size screens;
+2. *CSS* is the language for describing the presentation of web pages (i.e. - fonts, layout, colors, etc) as well, it allows for the presentation to adapt to different types of devices with different size screens;
 3. _JavaScript_ is used to implement complex features on web pages by
     * displaying timely content
     * creating interactrive features
@@ -26,21 +26,68 @@ In order to test your JS knowledge, I have created the [JavaScript Code Quiz Cha
 
 </p>
 
-## :video_game: GAMEPLAY  
+## :video_game: GAMEPLAY :video_game:
      
 Quiz - https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/
 
 <p align="justify">
 
-When the link above is clicked you will be taken to the web page containig the JavaScript Code Quiz Challenge.  
+When the link above is clicked you will be taken to the web page containig the JavaScript Code Quiz Challenge.  The NavBar will take you to the Recent Scores page and there are links to my [Responsive Portfolio](https://etorres-revature.github.io/Responsive_Portfolio/) on the far right.  The quiz rules are displayed in the middle of the screen.
 
 </p>
 
 ![JavaScript Code Quiz Challenge before start button pushed](./assets/images/readme_screenshots/quiz.png)
 
-### :computer: Technologies Used
+<p align="justify">
 
-#### :memo: HTML5
+If the default background does not suit your tastes, then I have provided a **"New Background"** button that uses JS to change the CSS setting for the background color.
+
+</p>
+
+![JavaScript Code Quiz Challenge with different backgrounds](./assets/images/readme_screenshots/quiz-background.png)
+
+<p align="justify">
+
+When you click on the button that reads **"Start Quiz!!"** JS is used to display the elements of the game:
+* *an image*
+* *an area to display the question*
+* *four buttons each with a potential correct answer*
+
+</p>
+
+![JavaScript Quiz Challenge after game started](./assets/images/readme_screenshots/quiz-active)
+
+<p align="justify">
+
+While you are taking the JavaScript Code Quiz Challenge JS is being used to manipulate the following HTML elements:
+1. Dynamic display of the Progress Bar informing you of the percentage time left in the game;
+1. Providing a running counter of the second left to finish the game;
+1. Displaying the number of questions that have been answered; and 
+1. Keeping a tally of correct answers (e.g. - you're ***SCORE***)
+
+Once you have answered all of the questions, the image and message will be changed by JS based on the percentage of questions that you have answwered correctly.
+
+</p>
+
+![JavaScript Quiz Challenge completed game](./assets/images/readme_screenshots/quiz-finished)
+
+<p align="justify">
+
+Don't let the timer run out; otherwise, a devil-may-care Lisa Simpson will ***devilishly*** appear to inform you that you have lost!!
+
+</p>
+
+![JavaScript Quiz Challenge Lisa Simpson loser message](./assets/images/readme_screenshots/quiz-loser)
+
+<p align="justify">
+
+
+
+</p>
+
+### :computer: Technologies Used :computer:
+
+#### :memo: HTML5 :memo:
 
 <p align="justify">
 
@@ -50,7 +97,7 @@ HTML 5 is a markup language used for structuring and presenting content on the W
 
 HTML5 content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/HTML5).</a>
 
-#### :art: CSS
+#### :art: CSS :art:
 
 <p align="justify">
 
@@ -66,7 +113,7 @@ Separation of formating and content also makes it feasible to present the same m
 
 CSS content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).</a>
 
-#### :shoe: Bootstrap 4
+#### :shoe: Bootstrap 4 :shoe:
 
 <p align="justify">
 
@@ -76,7 +123,7 @@ Bootstrtap 4 is a free and open-source CSS framework directed at responsive, mob
 
 Bootstrap 4 content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).</a>
 
-#### :sparkler: JavaScript
+#### :sparkler: JavaScript :sparkler:
 
 <p align="justify">
 
