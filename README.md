@@ -7,6 +7,7 @@ Each perfroms a specific funciton:
 1. *HTML* is used to structure and present content on the World Wide Web;
 2. *CSS* is the language for describing the presentation of web pages (i.e. - fonts, layout, colors, etc) as well, it allows for the presentation to adapt to different types of devices with different size screens;
 3. _JavaScript_ is used to implement complex features on web pages by
+
     * displaying timely content
     * creating interactrive features
     * animated graphics
@@ -67,7 +68,7 @@ And there you have it, just a small taste of the ways in which **JS** can make y
 
 **HTML 5** is a markup language used for structuring and presenting content on the World Wide Web.  The goals are to improve the language with support for the latest multimedia and other new features; to keep the language both easily readable by humans and consistnetly understood by computers and devices; and to remain backward compatible to older software.  Many new symantic features are included.
 
-**HTML5** content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/HTML5).</a>
+*HTML5* content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/HTML5).</a>
 
 #### :art: CSS :art:
 
@@ -75,19 +76,19 @@ And there you have it, just a small taste of the ways in which **JS** can make y
 
 Separation of formating and content also makes it feasible to present the same markup page in different styles for differnt rendering methods, such as on-screen, in print, by voice, and on Braille-based tactivle devices. 
 
-CSS content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).</a>
+*CSS* content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Cascading_Style_Sheets).</a>
 
 #### :shoe: Bootstrap 4 :shoe:
 
 **Bootstrtap 4** is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.  It contains CSS and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.  
 
-Bootstrap 4 content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).</a>
+*Bootstrap 4* content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).</a>
 
 #### :sparkler: JavaScript :sparkler:
 
 **JavaScript (JS)** is one of the core technologies of the World Wide Web (along with HTML and CSS). It ienables interactive web pages and is an essential part of web applications.  JS is a multi-faceted, scripting language that provides versatility through Application Programming Interfaces (APIs) and Documetn Object Model (DOM) manipulation, among others.
 
-JavaScript content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/JavaScript).</a>
+*JavaScript* content borrowed from <a target="_blank" rel="noopener noreferrer">[this page](https://en.wikipedia.org/wiki/JavaScript).</a>
 
 ## Author :sunglasses:
 
