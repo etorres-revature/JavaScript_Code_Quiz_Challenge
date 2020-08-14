@@ -56,7 +56,7 @@ Don't let the timer run out; otherwise, a *devil-may-care* **Lisa Simpson** will
 
 ![JavaScript Code Quiz Challenge Lisa Simpson loser message](./assets/images/readme_screenshots/quiz-loser.png)
 
-When you are finished with the *JavaScript Code Quiz Challenge*; **JS** is used to store an array of objects containing player initials and scores.  When the ***Top Scores*** page is visited **JS** is used to dynamically dispaly information of the last ten players and their associated scores.  ***JSON parse/stringify*** is used to store this array of objects in *Local Storage*, so that the information is ***persisted*** that is it will be available in the browser even if it is closed or reloaded (the information will be lost once the user or another application **clears** *Local Storage*).
+When you are finished with the *JavaScript Code Quiz Challenge*; **JS** is used to store an array of objects containing player initials and scores.  When the ***Top Scores*** page is visited **JS** is used to dynamically dispaly information of the last ten players and their associated scores.  ***JSON parse/stringify*** is used to store this array of objects in *Local Storage*, so that the information is ***persisted*** and will be available in the browser even if it is closed or reloaded (the information will be lost once the user or another application **clears** *Local Storage*).
 
 ![JavaScript Code Quiz Challenge ***Top Scores*** page display](./assets/images/readme_screenshots/quiz-top-scores.png)
 
