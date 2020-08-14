@@ -20,9 +20,9 @@ In order to test your **JS** knowledge, I have created the [*JavaScript Code Qui
 
 ## :video_game: GAMEPLAY :video_game:
      
-[**JavaScript Code Quiz Challenge**](https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/)
+<p text="justify"><a href="https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/">JavaScript Code Quiz Challenge</a></p>
 
-When the link above is clicked you will be taken to the web page containig the *JavaScript Code Quiz Challenge*.  The NavBar will take you to the Recent Scores page and there are links to my [***Responsive Portfolio***](https://etorres-revature.github.io/Responsive_Portfolio/) on the far right.  The quiz rules are displayed in the middle of the screen.
+When the link above is clicked you will be taken to the web page containig the *JavaScript Code Quiz Challenge*.  The NavBar will take you to the ***Recent Scores*** page and there are links to my [***Responsive Portfolio***](https://etorres-revature.github.io/Responsive_Portfolio/) on the far right.  The quiz rules are displayed in the middle of the screen.
 
 
 ![JavaScript Code Quiz Challenge before start button pushed](./assets/images/readme_screenshots/quiz.png)
@@ -43,7 +43,7 @@ When you click on the button that reads ***"Start Quiz!!"*** **JS** is used to d
 While you are taking the *JavaScript Code Quiz Challenge* **JS** is being used to manipulate the following **HTML** elements:
 
 1. Dynamic display of the *Progress Bar* informing you of the percentage time left in the game;
-1. Providing a running *counter* of the second left to finish the game;
+1. Providing a running *counter* of the seconds left to finish the game;
 1. Displaying the *number of questions* that have been *answered*; and 
 1. Keeping a *tally of correct answers* (e.g. - you're ***SCORE!!***).
 

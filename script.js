@@ -183,8 +183,18 @@ function startTimer() {
     //setting interval funcionality into variable
     interval = setInterval(function () {
         //if timer is 0 changing image display to loser gif
-        if (timer === -1) {
+        if (timer <= -1) {
+            //changing quiz image to Lisa Simpson loser GIF
             jsQuizImageEl.setAttribute("src", "./assets/images/loser/simpson-loser.gif");
+            //changing the title caption and styling
+            jsQuizQuestionTitleEl.textContent = "You are a JS LOSER!!!";
+            jsQuizQuestionTitleEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 25px; font-weight: 725;");
+            jsQuizQuestionTitleEl.style.textDecoration = "underline";
+            //changing the message body and styling
+            jsQuizQuestionEl. textContent = "You have run out of time and LOST the JavaScript Code Quiz Challenge.\nLisa Simpson is here to heap you with the appropriate amounts of scorn, derision, and judgment (all in equal amounts).\nDo not return to darken our doors until you know at least a little something about JS."
+            jsQuizQuestionEl.setAttribute("style", "margin-left: 85px; margin-right: 85px; margin-top: 18px; font-style: italic;");
+            //making the display of the buttons to none.
+            jsQuizChoicesEl.setAttribute("style", "display: none");
             //stopping the timer interval
             clearInterval(timer);
         } else {
