@@ -40,14 +40,14 @@ When you click on the button that reads ***"Start Quiz!!"***; **JS** is used to 
 
 ![JavaScript Code Quiz Challenge after game started](./assets/images/readme_screenshots/quiz-active.png)
 
-While you are taking the *JavaScript Code Quiz Challenge* **JS** is being used to manipulate the following **HTML** elements:
+While you are taking the *JavaScript Code Quiz Challenge*; **JS** is being used to manipulate the following **HTML** elements:
 
 1. Dynamic display of the *Progress Bar* informing you of the percentage time left in the game;
 1. Providing a running *counter* of the seconds left to finish the game;
 1. Displaying the *number of questions* that have been *answered*; and 
 1. Keeping a *tally of correct answers* (e.g. - you're ***SCORE!!***).
 
-Once you have answered all of the questions, the image and message will be changed by **JS** based on the *percentage of questions* that you have *answwered correctly*.
+Once you have answered all of the questions, the image and message will be changed by **JS** based on the *percentage of questions* that you have *answered correctly*.
 
 ![JavaScript Code Quiz Challenge completed game](./assets/images/readme_screenshots/quiz-finished.png)
 
@@ -56,7 +56,7 @@ Don't let the timer run out; otherwise, a *devil-may-care* **Lisa Simpson** will
 
 ![JavaScript Code Quiz Challenge Lisa Simpson loser message](./assets/images/readme_screenshots/quiz-loser.png)
 
-When you are finished with the *JavaScript Code Quiz Challenge*, **JS** is used to store an array of objects containing player initials and scores.  When the ***Top Scores*** page is visited **JS** is used to dynamically dispaly information of the last ten players and their associated scores.  ***JSON parse/stringify*** is used to store this array of objects in *Local Storage*, so that the information is ***persisted*** that is it will be available in the browser even if it is closed or reloaded (the information will be lost once the user or another application **clears** *Local Storage*).
+When you are finished with the *JavaScript Code Quiz Challenge*; **JS** is used to store an array of objects containing player initials and scores.  When the ***Top Scores*** page is visited **JS** is used to dynamically dispaly information of the last ten players and their associated scores.  ***JSON parse/stringify*** is used to store this array of objects in *Local Storage*, so that the information is ***persisted*** that is it will be available in the browser even if it is closed or reloaded (the information will be lost once the user or another application **clears** *Local Storage*).
 
 ![JavaScript Code Quiz Challenge ***Top Scores*** page display](./assets/images/readme_screenshots/quiz-top-scores.png)
 
