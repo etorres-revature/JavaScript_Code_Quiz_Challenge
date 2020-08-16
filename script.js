@@ -291,7 +291,7 @@ function startQuiz(event) {
 
 
 //click event for button a
-function chooseAnswerA(event) {
+function chooseAnswer(event) {
     event.preventDefault();
     event.stopPropagation();
     console.log("You have clicked Button A!");
@@ -302,40 +302,40 @@ function chooseAnswerA(event) {
     questionRender();
 }
 //click event for button b
-function chooseAnswerB(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log("You have clicked Button B!");
-    console.log(event);
-    //runs to check if this is correct answer
-    checkAnswer(event);
-    //returns to render next question
-    questionRender();
-}
+// function chooseAnswerB(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     console.log("You have clicked Button B!");
+//     console.log(event);
+//     //runs to check if this is correct answer
+//     checkAnswer(event);
+//     //returns to render next question
+//     questionRender();
+// }
 
-//click event for button c
-function chooseAnswerC(event) {
-    event.preventDefault();
-    event.stopPropagation;
-    console.log(event);
-    console.log("You have clicked Button C!");
-    //runs to check if this is correct answer
-    checkAnswer(event);
-    //returns to render next question
-    questionRender();
-}
+// //click event for button c
+// function chooseAnswerC(event) {
+//     event.preventDefault();
+//     event.stopPropagation;
+//     console.log(event);
+//     console.log("You have clicked Button C!");
+//     //runs to check if this is correct answer
+//     checkAnswer(event);
+//     //returns to render next question
+//     questionRender();
+// }
 
-//click event for button d
-function chooseAnswerD(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log(event);
-    console.log("You have clicked Button D!");
-    //runs to check if this is correct answer
-    checkAnswer(event)
-    //returns to render next question
-    questionRender()
-}
+// //click event for button d
+// function chooseAnswerD(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     console.log(event);
+//     console.log("You have clicked Button D!");
+//     //runs to check if this is correct answer
+//     checkAnswer(event)
+//     //returns to render next question
+//     questionRender()
+// }
 
 //check the answer event with the correct answer stored in the questions array
 function checkAnswer(event) {
@@ -421,9 +421,9 @@ function quizMessageStyling() {
 
 //eventlistenesr for start button and answer buttons (A, B, C, D)
 jsQuizStartBtn.addEventListener("click", startQuiz);
-jsQuizAnswerABtn.addEventListener("click", chooseAnswerA);
-jsQuizAnswerBBtn.addEventListener("click", chooseAnswerB);
-jsQuizAnswerCBtn.addEventListener("click", chooseAnswerC);
-jsQuizAnswerDBtn.addEventListener("click", chooseAnswerD);
+jsQuizAnswerABtn.addEventListener("click", chooseAnswer);
+jsQuizAnswerBBtn.addEventListener("click", chooseAnswer);
+jsQuizAnswerCBtn.addEventListener("click", chooseAnswer);
+jsQuizAnswerDBtn.addEventListener("click", chooseAnswer);
 jsQuizChangeBackgroundBtn.addEventListener("click", changeBackground);
 //jsQuizReStartGameBtn.addEventListener("click", reStartQuiz);
