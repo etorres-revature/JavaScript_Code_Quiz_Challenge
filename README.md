@@ -1,4 +1,4 @@
-# :school: [*JavaScript_Code_Quiz_Challenge*](https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/) :school:
+# :school: [*JavaScript Code Quiz Challenge*](https://etorres-revature.github.io/JavaScript_Code_Quiz_Challenge/) :school:
 
 The world wide web is composed of three primary languages:  Hypertext Markup Lanauge **(HTML)**; Cascading Style Sheets **(CSS)** and JavaScript **(JS)**.
 
