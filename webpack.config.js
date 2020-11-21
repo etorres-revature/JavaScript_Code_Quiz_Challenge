@@ -7,7 +7,7 @@ const path = require("path");
  * @see https://webpack.js.org/concepts/configuration/
  */
 const config = {
-  entry: ".script.js",
+  entry: "/script.js",
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js",
@@ -28,7 +28,7 @@ const config = {
       display: "standalone",
       icons: [
         {
-          src: path.resolve(__dirname, "assets/favicon/quiz-icon.png"),
+          src: path.resolve(__dirname, "assets/images/favicon/quiz-icon.png"),
           size: [72, 96, 128, 144, 152, 192, 384, 512],
         },
       ],
