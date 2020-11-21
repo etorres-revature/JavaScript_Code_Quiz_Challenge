@@ -26,7 +26,6 @@
     />
     <!-- local styling -->
     <link rel="stylesheet" href="./style.css" />
-    <link rel="manifest" href="./dist/manifest.webmanifest" />
   </head>
 
   <body>
@@ -305,21 +304,5 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then((registration) =>
-            console.log("The Service Worker has been registered", registration)
-          )
-          .catch((err) =>
-            console.log("Service Worker registration failed!!", err)
-          );
-      }
-    </script>
-    <noscript
-      >Please enable JavaScript to continue using this Progressive Web
-      Application.</noscript
-    >
   </body>
 </html>
