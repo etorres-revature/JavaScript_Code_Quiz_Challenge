@@ -26,6 +26,7 @@
     />
     <!-- local styling -->
     <link rel="stylesheet" href="./style.css" />
+    <link rel="manifest" href="./dist/manifest.webmanifest" />
   </head>
 
   <body>
@@ -66,7 +67,7 @@
           <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
           <li>
             <a
-              style="color: red;"
+              style="color: red"
               class="nav-link"
               href="https://etorres-revature.github.io/Responsive_Portfolio/"
               >Index</a
@@ -74,7 +75,7 @@
           </li>
           <li>
             <a
-              style="color: green;"
+              style="color: green"
               class="nav-link"
               href="https://etorres-revature.github.io/Responsive_Portfolio/about_me.html"
               >About Me</a
@@ -82,7 +83,7 @@
           </li>
           <li>
             <a
-              style="color: yellow;"
+              style="color: yellow"
               class="nav-link"
               href="https://etorres-revature.github.io/Responsive_Portfolio/portfolio.html"
               >Portfolio</a
@@ -91,7 +92,7 @@
           <!-- <div class="dropdown-divider"></div> -->
           <li>
             <a
-              style="color: blue;"
+              style="color: blue"
               class="nav-link"
               href="https://etorres-revature.github.io/Responsive_Portfolio/contact.html"
               >Contact</a
@@ -161,14 +162,14 @@
           id="quiz-timer"
           class="progress-bar progress-bar-striped bg-success text-center"
           role="progressbar"
-          style="width: 100%;"
+          style="width: 100%"
           aria-valuenow="100"
           aria-valuemin="0"
           aria-valuemax="100"
         ></div>
       </div>
       <!-- div to display quiz questions and answers -->
-      <div id="quiz" class="container-fluid w-100" style="display: none;">
+      <div id="quiz" class="container-fluid w-100" style="display: none">
         <div class="row">
           <div class="col-2"></div>
           <div class="clearfix">
@@ -180,11 +181,11 @@
             </div>
           </div>
           <!-- question is displayed here -->
-          <div class="card px-8 ml-2 text-wrap w-50" style="border-color: red;">
+          <div class="card px-8 ml-2 text-wrap w-50" style="border-color: red">
             <p id="js-question-title">QUESTION:</p>
             <p id="js-question"></p>
             <!-- button choices -->
-            <div id="choices" style="display: block;">
+            <div id="choices" style="display: block">
               <button
                 type="button m-auto"
                 class="btn btn-outline-danger d-block text-justify"
@@ -245,14 +246,12 @@
     <!-- footer taken form other projects -->
     <footer
       class="sticky-footer"
-      style="display: contents; border-color: black; background-color: grey;"
+      style="display: contents; border-color: black; background-color: grey"
     >
       <div class="container">
         <div class="row">
           <div class="col">
-            <h3 id="footer">
-              Visit me on social media:
-            </h3>
+            <h3 id="footer">Visit me on social media:</h3>
           </div>
         </div>
         <!-- footer social media classes and styling from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
@@ -284,9 +283,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <p id="copyright">
-              &copy; 2020 Eric D. Torres Productions
-            </p>
+            <p id="copyright">&copy; 2020 Eric D. Torres Productions</p>
           </div>
         </div>
       </div>
@@ -308,5 +305,21 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) =>
+            console.log("The Service Worker has been registered", registration)
+          )
+          .catch((err) =>
+            console.log("Service Worker registration failed!!", err)
+          );
+      }
+    </script>
+    <noscript
+      >Please enable JavaScript to continue using this Progressive Web
+      Application.</noscript
+    >
   </body>
 </html>
